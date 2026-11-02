@@ -1,0 +1,75 @@
+.nab {
+    display: flex;
+    justify-content: space-between; /* Separa el logo a la izquierda y los links a la derecha */
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem; /* Espaciado lateral para que no pegue a los bordes de la pantalla */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: rgba(11, 15, 25, 0.85); /* Coherente con tu fondo Dark Slate */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Estilo para el logo / marca */
+.brand-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f3f4f6 30%, var(--accent-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Contenedor de la lista de enlaces */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaciado uniforme y moderno entre elementos */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces de navegación individuales */
+.nav-links a:not(.ver-demo) {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm, 6px);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Efecto hover en los enlaces */
+.nav-links a:not(.ver-demo):hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary, #1b2230);
+}
+
+/* Ajuste específico para pantallas pequeñas o responsivas */
+@media (max-width: 900px) {
+  .nab {
+    padding: 0 1.5rem;
+  }
+  
+  /* Ocultar enlaces secundarios menores si deseas simplificar en móvil, o dejar flex-wrap */
+  .nav-links {
+    gap: 0.25rem;
+  }
+  
+  .nav-links a:not(.ver-demo) {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+}

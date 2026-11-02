@@ -1,0 +1,53 @@
+:root {
+  /* Color Palette - Dark Theme (Azul Tecnológico Dark Slate) */
+  --bg-primary: #0b0f19;        /* Fondo principal (Azul oscuro tecnológico) */
+  --bg-secondary: #121722;      /* Tarjetas, contenedores y secciones secundarias */
+  --bg-tertiary: #1b2230;       /* Modales, inputs y elementos en hover */
+
+  /* Text Colors */
+  --text-primary: #f3f4f6;      /* Texto principal (blanco suave) */
+  --text-secondary: #9ca3af;    /* Texto secundario, subtítulos y metadatos */
+  --text-muted: #6b7280;        /* Placeholders, elementos deshabilitados */
+
+  /* Accent Colors */
+  --accent-primary: #f97316;    /* Naranja vibrante para el CTA principal y highlights */
+  --accent-hover: #ea580c;      /* Estado hover de los botones principales */
+  --accent-amber: #f59e0b;      /* Ambar de soporte para badges o detalles */
+  --accent-glow: rgba(249, 115, 22, 0.15); /* Resplandor para efectos de enfoque */
+
+  /* Borders & Dividers */
+  --border-subtle: #1f2937;     /* Bordes finos de tarjetas y divisiones */
+  --border-active: #374151;     /* Bordes para inputs activos o hover */
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  --glow-accent: 0 0 20px rgba(249, 115, 22, 0.25);
+
+  /* Typography & Layout */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
