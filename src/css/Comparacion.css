@@ -1,0 +1,94 @@
+.contenedor-comparacion {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitulo-comparacion {
+  color: #a0aec0;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.grid-comparacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tarjeta-comparacion {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2d2d2d;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-comparacion:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-comparacion.antes {
+  border-top: 4px solid #e53e3e;
+}
+
+.tarjeta-comparacion.despues {
+  border-top: 4px solid #319795;
+  background-color: #182222;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.antes-icon {
+  color: #e53e3e;
+}
+
+.despues-icon {
+  color: #319795;
+}
+
+.lista-puntos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lista-puntos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+.punto-icono {
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.punto-icono.negativo {
+  color: #fc8181;
+}
+
+.punto-icono.positivo {
+  color: #4fd1c5;
+}

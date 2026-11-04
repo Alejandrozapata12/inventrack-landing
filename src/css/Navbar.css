@@ -1,20 +1,17 @@
 .nab {
     display: flex;
-    justify-content: space-between; /* Separa el logo a la izquierda y los links a la derecha */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 5rem;
-    padding: 0 3rem; /* Espaciado lateral para que no pegue a los bordes de la pantalla */
-
+    padding: 0 3rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-
-    background-color: rgba(11, 15, 25, 0.85); /* Coherente con tu fondo Dark Slate */
+    background-color: rgba(11, 15, 25, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px); 
-    
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -22,19 +19,19 @@
 .brand-logo {
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--text-primary);
+    color: var(--text-primary, #ffffff);
     text-decoration: none;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #f3f4f6 30%, var(--accent-primary) 100%);
+    background: linear-gradient(135deg, #f3f4f6 30%, var(--accent-primary, #319795) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Contenedor de la lista de enlaces */
+/* Contenedor de la lista de enlaces (Desktop) */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Espaciado uniforme y moderno entre elementos */
+    gap: 0.5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -43,33 +40,86 @@
 /* Enlaces de navegación individuales */
 .nav-links a:not(.ver-demo) {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--text-secondary, #a0aec0);
     font-weight: 500;
     font-size: 0.95rem;
     padding: 0.5rem 0.75rem;
     border-radius: var(--radius-sm, 6px);
-    transition: color var(--transition-fast), background-color var(--transition-fast);
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 /* Efecto hover en los enlaces */
 .nav-links a:not(.ver-demo):hover {
-    color: var(--text-primary);
+    color: var(--text-primary, #ffffff);
     background-color: var(--bg-tertiary, #1b2230);
 }
 
-/* Ajuste específico para pantallas pequeñas o responsivas */
+/* Botón de Hamburguesa (Oculto en Desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    color: #4fd1c5;
+}
+
+/* Ajuste específico para pantallas móviles o tablets (< 900px) */
 @media (max-width: 900px) {
   .nab {
     padding: 0 1.5rem;
   }
-  
-  /* Ocultar enlaces secundarios menores si deseas simplificar en móvil, o dejar flex-wrap */
-  .nav-links {
-    gap: 0.25rem;
+
+  .menu-toggle {
+    display: block;
   }
-  
+
+  /* Transformar la lista de enlaces en un menú deslizante o flotante */
+  .nav-links {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background-color: rgba(11, 15, 25, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    gap: 1.5rem;
+    transform: translateY(-150%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Clase activa que despliega el menú móvil */
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
   .nav-links a:not(.ver-demo) {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 1.15rem;
+    padding: 0.75rem 1.5rem;
+    width: 80%;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .nav-links a:not(.ver-demo):hover {
+    background-color: rgba(79, 209, 197, 0.1);
+    color: #4fd1c5;
+  }
+
+  .nav-item-cta {
+    margin-top: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
   }
 }

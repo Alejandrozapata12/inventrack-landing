@@ -1,0 +1,102 @@
+.contenedor-roles {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitulo-roles {
+  color: #a0aec0;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.grid-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tarjeta-rol {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2d2d2d;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-rol:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-rol.admin {
+  border-top: 4px solid #3182ce;
+}
+
+.tarjeta-rol.empleado {
+  border-top: 4px solid #319795;
+}
+
+.card-header-rol {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.card-header-rol h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+
+.badge-rol {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  background-color: #2a2a2a;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.rol-icono {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.admin-icon {
+  color: #63b3ed;
+}
+
+.empleado-icon {
+  color: #4fd1c5;
+}
+
+.lista-permisos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.lista-permisos li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.check-icon {
+  color: #48bb78;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
