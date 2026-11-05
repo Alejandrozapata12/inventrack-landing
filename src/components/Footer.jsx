@@ -3,7 +3,7 @@ import { FaBoxes, FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/f
 import '../css/Footer.css';
 function Footer() {
   return (
-    <footer className="footer-contenedor">
+    <footer className="footer-contenedor" id='footer' data-aos="zoom-in-up">
       <div className="footer-contenido">
         
         {/* Marca y descripción */}
@@ -48,7 +48,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} InvenTrack. Desarrollado con <FaHeart className="heart-icon" /> para optimizar la logística.
+          &copy; {new Date().getFullYear()} InvenTrack. Desarrollado por  <span style={{ fontWeight: "bold"}} >AlejoDev</span> para optimizar la logística.
         </p>
       </div>
     </footer>

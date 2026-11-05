@@ -4,7 +4,7 @@ import stock from '../assets/image.png';
 
 function Home() {
   return (
-    <div className='home-container'>
+    <div className='home-container' id='home' data-aos="zoom-in-up">
        {/* Columna Izquierda: Imagen */}
        <div className="home-image-container">
          <img src={stock} alt="Inventario-image" className="home-image" />

@@ -64,7 +64,7 @@ function Caracteristicas() {
   ]
 
   return (
-    <div className="contenedor-caracteristicas">
+    <div className="contenedor-caracteristicas" id='caracteristicas' data-aos="zoom-in-up">
       <div className="header-seccion">
         <h2>Características Principales</h2>
         <p>Todo lo que necesitas para optimizar la logística y control de tu inventario en un solo lugar.</p>

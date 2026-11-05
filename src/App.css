@@ -44,7 +44,7 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);

@@ -15,7 +15,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="nab">
+    <nav className="nab" data-aos="zoom-in">
       {/* Logotipo o Nombre de la marca a la izquierda */}
       <div className="nav-brand">
         <a href="#home" className="brand-logo" onClick={closeMenu}>InvenTrack</a>
@@ -25,7 +25,7 @@ function Navbar() {
       <div className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
-
+ 
       {/* Enlaces de navegación */}
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
         <li><a href="#home" onClick={closeMenu}>Home</a></li>

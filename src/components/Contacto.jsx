@@ -15,8 +15,8 @@ function Contacto() {
   }
 
   return (
-    <div className="contenedor-contacto">
-      <div className="header-contacto">
+    <div className="contenedor-contacto" id='contacto'>
+      <div className="header-contacto" data-aos="fade-up">
         <h2>Contáctanos</h2>
         <p>¿Tienes dudas sobre InvenTrack o necesitas una demo personalizada? Escríbenos.</p>
       </div>

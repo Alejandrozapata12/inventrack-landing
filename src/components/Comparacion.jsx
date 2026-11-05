@@ -15,7 +15,7 @@ import {
 
 function Comparacion() {
   return (
-    <div className="contenedor-comparacion">
+    <div className="contenedor-comparacion" id='comparacion' data-aos="fade-up">
       <h2>Transformación Operativa</h2>
       <p className="subtitulo-comparacion">El impacto de evolucionar la gestión de inventario con InvenTrack</p>
       

@@ -16,7 +16,7 @@ import {
 
 function Roles() {
   return (
-    <div className="contenedor-roles">
+    <div className="contenedor-roles" id='roles' data-aos="fade-up">
       <h2>Roles y Permisos del Sistema</h2>
       <p className="subtitulo-roles">Control de acceso seguro adaptado a cada miembro de tu equipo</p>
       
