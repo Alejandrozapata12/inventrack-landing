@@ -24,7 +24,7 @@ function Tecnologias() {
   ]
 
   return (
-    <div className="contenedor-tecnologias" data-aos="fade-up">
+    <div className="contenedor-tecnologias" data-aos="fade-up" id="tecnologias">
       <h2>Tecnologías utilizadas en InvenTrack</h2>
       <div className="grid-tecnologias">
         {stack.map((tech, index) => (
