@@ -29,27 +29,30 @@ function Home() {
          
          <div className="home-actions">
            <VerDemo />
-           <button type="button" className='btn-agendar' onClick={handleDemo}>Agendar demo</button>
+           
+           <div className="btn-toast-wrapper">
+             <button type="button" className='btn-agendar' onClick={handleDemo}>Agendar demo</button>
 
-           {active && (
-               <div className="toast-container is-visible" id="toastContainer" role="status" aria-live="polite">
-                 <div className="toast-content">
-                   <span className="toast-icon" aria-hidden="true">ℹ️</span>
-                   <div className="toast-message">
-                     <p className="toast-title">Aviso</p>
-                     <p className="toast-text">Aún no se ha proporcionado una ruta para este demo.</p>
+             {active && (
+                 <div className="toast-container is-visible" id="toastContainer" role="status" aria-live="polite">
+                   <div className="toast-content">
+                     <span className="toast-icon" aria-hidden="true">ℹ️</span>
+                     <div className="toast-message">
+                       <p className="toast-title">Aviso</p>
+                       <p className="toast-text">Aún no se ha proporcionado una ruta para este demo.</p>
+                     </div>
+                     <button 
+                       className="toast-close" 
+                       type="button" 
+                       aria-label="Cerrar notificación"
+                       onClick={() => setActive(false)}
+                     >
+                       &times;
+                     </button>
                    </div>
-                   <button 
-                     className="toast-close" 
-                     type="button" 
-                     aria-label="Cerrar notificación"
-                     onClick={() => setActive(false)}
-                   >
-                     &times;
-                   </button>
                  </div>
-               </div>
-           )}
+             )}
+           </div>
          </div>
        </div>
      </div>

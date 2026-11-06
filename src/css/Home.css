@@ -1,12 +1,12 @@
 .home-container {
   display: flex;
-  flex-direction: row; /* Coloca la imagen y el contenido lado a lado */
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 3.5rem;
   min-height: calc(100vh - 5rem);
   padding: 3rem 2rem;
-  margin-top: 5rem; /* Espacio para el navbar fijo */
+  margin-top: 5rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +36,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los textos a la izquierda */
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -63,12 +63,13 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* Diseño Responsivo: Si la pantalla es menor a 900px, pasa a una sola columna */
+/* Diseño Responsivo */
 @media (max-width: 900px) {
   .home-container {
-    flex-direction: column-reverse; /* Primero texto, después imagen en móviles (opcional) */
+    flex-direction: column-reverse;
     text-align: center;
     padding: 2rem 1rem;
   }
@@ -92,21 +93,16 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  
-  /* Fondo transparente con un borde sutil y elegante */
   background-color: transparent;
   border: 1px solid var(--border-active, #374151);
   border-radius: var(--radius-md, 10px);
   box-shadow: var(--shadow-sm);
-  
-  /* Interacciones fluidas */
   cursor: pointer;
   transition: all var(--transition-normal, 250ms cubic-bezier(0.4, 0, 0.2, 1));
   text-decoration: none;
   user-select: none;
 }
 
-/* Efecto Hover (al pasar el cursor) */
 .btn-agendar:hover {
   background-color: var(--bg-tertiary, #1b2230);
   border-color: var(--accent-primary, #f97316);
@@ -115,32 +111,34 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Efecto Active (al hacer clic) */
 .btn-agendar:active {
   transform: translateY(0);
 }
 
-/* Estado de enfoque por accesibilidad (Teclado / Tab) */
 .btn-agendar:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--accent-glow, rgba(249, 115, 22, 0.4));
 }
 
-/* Contenedor principal flotante (ej: esquina inferior derecha) */
+/* Contenedor relativo para anclar el toast al botón */
+.btn-toast-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Toast posicionado justo debajo del botón */
 .toast-container {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
   z-index: 9999;
   
-  /* Transiciones para mostrar/ocultar */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(1rem);
+  transform: translateY(-0.5rem);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Clase para activar la visibilidad desde JS */
 .toast-container.is-visible {
   opacity: 1;
   visibility: visible;
@@ -155,7 +153,6 @@
   min-width: 280px;
   max-width: 400px;
   padding: 1rem;
-  
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
   color: var(--text-primary, #f3f4f6);
   background-color: var(--bg-surface, #1e293b);
@@ -164,13 +161,11 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
-/* Icono */
 .toast-icon {
   font-size: 1.25rem;
   line-height: 1;
 }
 
-/* Textos */
 .toast-message {
   flex: 1;
   display: flex;
@@ -192,7 +187,6 @@
   line-height: 1.4;
 }
 
-/* Botón de cierre */
 .toast-close {
   background: transparent;
   border: none;
