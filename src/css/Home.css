@@ -83,7 +83,6 @@
   }
 }
 
-
 .btn-agendar {
   display: inline-flex;
   align-items: center;
@@ -110,8 +109,8 @@
 /* Efecto Hover (al pasar el cursor) */
 .btn-agendar:hover {
   background-color: var(--bg-tertiary, #1b2230);
-  border-color: var(--accent-primary, #f97316); /* El borde adopta el color naranja del sistema */
-  color: var(--accent-primary, #f97316);       /* El texto también se vuelve naranja */
+  border-color: var(--accent-primary, #f97316);
+  color: var(--accent-primary, #f97316);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -126,8 +125,6 @@
   outline: none;
   box-shadow: 0 0 0 3px var(--accent-glow, rgba(249, 115, 22, 0.4));
 }
-
-
 
 /* Contenedor principal flotante (ej: esquina inferior derecha) */
 .toast-container {

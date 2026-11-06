@@ -3,20 +3,18 @@ import '../css/Home.css';
 import VerDemo from './VerDemo';
 import stock from '../assets/image.png';
 
-
 function Home() {
-
-   const [active, setActive]  = useState(false);
+   const [active, setActive] = useState(false);
 
    const handleDemo = () => {
-    setActive(true);
-    setTimeout(() => {
-      setActive(false);
-    }, 3000)
-   }
+     setActive(true);
+     setTimeout(() => {
+       setActive(false);
+     }, 3000);
+   };
 
-  return (
-    <div className='home-container' id='home' data-aos="zoom-in-up">
+   return (
+     <div className='home-container' id='home' data-aos="zoom-in-up">
        {/* Columna Izquierda: Imagen */}
        <div className="home-image-container">
          <img src={stock} alt="Inventario-image" className="home-image" />
@@ -34,21 +32,28 @@ function Home() {
            <button type="button" className='btn-agendar' onClick={handleDemo}>Agendar demo</button>
 
            {active && (
-               <div class="toast-container" id="toastContainer" role="status" aria-live="polite">
-                 <div class="toast-content">
-                   <span class="toast-icon" aria-hidden="true">ℹ️</span>
-                   <div class="toast-message">
-                     <p class="toast-title">Aviso</p>
-                     <p class="toast-text">Aún no se ha proporcionado una ruta para este demo.</p>
+               <div className="toast-container is-visible" id="toastContainer" role="status" aria-live="polite">
+                 <div className="toast-content">
+                   <span className="toast-icon" aria-hidden="true">ℹ️</span>
+                   <div className="toast-message">
+                     <p className="toast-title">Aviso</p>
+                     <p className="toast-text">Aún no se ha proporcionado una ruta para este demo.</p>
                    </div>
-                   <button class="toast-close" type="button" aria-label="Cerrar notificación">&times;</button>
+                   <button 
+                     className="toast-close" 
+                     type="button" 
+                     aria-label="Cerrar notificación"
+                     onClick={() => setActive(false)}
+                   >
+                     &times;
+                   </button>
                  </div>
                </div>
            )}
          </div>
        </div>
-    </div>
-  )
+     </div>
+   );
 }
 
 export default Home;
