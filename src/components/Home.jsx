@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import '../css/Home.css';
 import VerDemo from './VerDemo';
 import stock from '../assets/image.png';
 
+
 function Home() {
+
+   const [active, setActive]  = useState(false);
+
+   const handleDemo = () => {
+    setActive(true);
+    setTimeout(() => {
+      setActive(false);
+    }, 3000)
+   }
+
   return (
     <div className='home-container' id='home' data-aos="zoom-in-up">
        {/* Columna Izquierda: Imagen */}
@@ -19,7 +31,20 @@ function Home() {
          
          <div className="home-actions">
            <VerDemo />
-           <button type="button" className='btn-agendar'>Agendar demo</button>
+           <button type="button" className='btn-agendar' onClick={handleDemo}>Agendar demo</button>
+
+           {active && (
+               <div class="toast-container" id="toastContainer" role="status" aria-live="polite">
+                 <div class="toast-content">
+                   <span class="toast-icon" aria-hidden="true">ℹ️</span>
+                   <div class="toast-message">
+                     <p class="toast-title">Aviso</p>
+                     <p class="toast-text">Aún no se ha proporcionado una ruta para este demo.</p>
+                   </div>
+                   <button class="toast-close" type="button" aria-label="Cerrar notificación">&times;</button>
+                 </div>
+               </div>
+           )}
          </div>
        </div>
     </div>
